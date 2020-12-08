@@ -1,0 +1,1 @@
+Configuration files can be stored here.

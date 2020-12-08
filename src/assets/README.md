@@ -1,0 +1,1 @@
+Compiled assets or assets needed during compile time can be stored here.
