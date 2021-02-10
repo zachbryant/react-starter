@@ -1,1 +1,0 @@
-Common extensible layouts can be stored here.
