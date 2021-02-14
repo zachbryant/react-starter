@@ -63,7 +63,7 @@ module.exports = (env) => {
 			}),
 		],
 		optimization: {
-			minimize: !isDevelopment || true,
+			minimize: !isDevelopment,
 			minimizer: [
 				new TerserWebpackPlugin({
 					parallel: true,
