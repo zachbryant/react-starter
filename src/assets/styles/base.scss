@@ -1,1 +1,9 @@
-@use tailwind.scss;
+@import 'tailwindcss/base';
+
+@import 'tailwindcss/components';
+
+@import 'tailwindcss/utilities';
+
+@layer base {
+  // TODO add base styles
+}
