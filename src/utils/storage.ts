@@ -4,7 +4,9 @@ export class Store {
 	}
 
 	static getOrDefault<T = any>(key: string, defaultValue: T): T {
-		return Store.get<T>(key) || defaultValue;
+		const got = Store.get<T>(key);
+		if (Object.keys(got).length > 0) return got;
+		return defaultValue;
 	}
 
 	static set(key: string, value: any) {
