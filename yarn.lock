@@ -1450,6 +1450,14 @@
     slice-ansi "^4.0.0"
     string-width "^4.2.0"
 
+"@parcel/codeframe@2.0.0-nightly.72+a0d19756":
+  version "2.0.0-nightly.72"
+  resolved "https://registry.yarnpkg.com/@parcel/codeframe/-/codeframe-2.0.0-nightly.72.tgz#ee2a70549f4c5d2946dbf0ea19333f2625ca900a"
+  integrity sha512-qpfzQlJpqlT9KPIVsooigHdLbscO00U+tZ0E0YdjYLd9PsBwAiuYEqh1AqoRPTy8eOu/U0bAakD4yU5n0KkwNw==
+  dependencies:
+    chalk "^2.4.2"
+    emphasize "^2.1.0"
+
 "@parcel/config-default@2.0.0-beta.2":
   version "2.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/@parcel/config-default/-/config-default-2.0.0-beta.2.tgz#7a577786e30bb9475cc5d82853396c8965026464"
@@ -1524,6 +1532,14 @@
     json-source-map "^0.6.1"
     nullthrows "^1.1.1"
 
+"@parcel/diagnostic@2.0.0-nightly.72+a0d19756":
+  version "2.0.0-nightly.72"
+  resolved "https://registry.yarnpkg.com/@parcel/diagnostic/-/diagnostic-2.0.0-nightly.72.tgz#1cb8aaf9daae50106aee1ce2ce3caa8a41040303"
+  integrity sha512-9Z3rr0sK0iJlYodrLtDuXbh3SFMd9xsf8L1a8MZ5WV1+MskGS/gIIC829EN7l7Vw8hWXqr6OX6lTg0dDCClblg==
+  dependencies:
+    json-source-map "^0.6.1"
+    nullthrows "^1.1.1"
+
 "@parcel/events@2.0.0-beta.2":
   version "2.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/@parcel/events/-/events-2.0.0-beta.2.tgz#31e73129787422fa19b70d5b1a976169d18a05b7"
@@ -1533,6 +1549,11 @@
   version "2.0.0-nightly.651"
   resolved "https://registry.yarnpkg.com/@parcel/events/-/events-2.0.0-nightly.651.tgz#36799e301aab2a7edf9eae2feb8db5edf027a280"
   integrity sha512-0kP9wuWYTJYjjfJojHnGebc4zMYGcCbTckncBL3+W2CU+33EsDFaZgKVkQRyqaXpq/pDl92H9QDmM/atgAteug==
+
+"@parcel/events@2.0.0-nightly.72+a0d19756":
+  version "2.0.0-nightly.72"
+  resolved "https://registry.yarnpkg.com/@parcel/events/-/events-2.0.0-nightly.72.tgz#592d1974d688e83abc094d4f2172465b36e49876"
+  integrity sha512-TQCiFzLEqN74jXRFZ9/FFhO3//POaCbYopi3R9di+3JkbjIqE+lwsuuyGmnZhsQWPaggiZDzF9gIOTWeSzCH+A==
 
 "@parcel/fs-search@2.0.0-beta.2":
   version "2.0.0-beta.2"
@@ -1583,6 +1604,14 @@
     "@parcel/diagnostic" "2.0.0-nightly.651+a67a5f02"
     "@parcel/events" "2.0.0-nightly.651+a67a5f02"
 
+"@parcel/logger@2.0.0-nightly.72+a0d19756":
+  version "2.0.0-nightly.72"
+  resolved "https://registry.yarnpkg.com/@parcel/logger/-/logger-2.0.0-nightly.72.tgz#ae313de048983c312537df0833bddaac63250427"
+  integrity sha512-vieHepW22Sj+yqs7yW2b5nbbkv9nxn1ilmeuJyGVXA4hw3FCKRLttZPv/nE6sN3KeXt77pvrrO3kCvhEcnby8A==
+  dependencies:
+    "@parcel/diagnostic" "2.0.0-nightly.72+a0d19756"
+    "@parcel/events" "2.0.0-nightly.72+a0d19756"
+
 "@parcel/markdown-ansi@2.0.0-beta.2":
   version "2.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/@parcel/markdown-ansi/-/markdown-ansi-2.0.0-beta.2.tgz#5270b64313c6bbcdd8b401ecd9e02dda9e71b465"
@@ -1596,6 +1625,13 @@
   integrity sha512-eKF8H/dtRcdJTSPhaIw6klx4OwdvY1caliG2Ah+PA3tmhDH+A83lTTcmttwLrqZa6D7ImFfSOiGWgENacDUzRw==
   dependencies:
     chalk "^4.1.0"
+
+"@parcel/markdown-ansi@2.0.0-nightly.72+a0d19756":
+  version "2.0.0-nightly.72"
+  resolved "https://registry.yarnpkg.com/@parcel/markdown-ansi/-/markdown-ansi-2.0.0-nightly.72.tgz#3f9f7f235c14fb11870f3eb0c9a251ce490c6540"
+  integrity sha512-j0HojLH+e0L8naFHjcDwEOnSzjh9lH32bxkoHZgibg2MYuGssB/X6EQbzf+Lw135i+hTEPnPzYZBhWnofTKogw==
+  dependencies:
+    chalk "^2.4.2"
 
 "@parcel/namer-default@2.0.0-beta.2":
   version "2.0.0-beta.2"
@@ -1749,6 +1785,22 @@
   integrity sha512-7j9SK69gjhSUKOf1zkJZsMx9tNxrNSf7nXrcOV4CHYII1KRRqF4GzM/EOAUR4ERIuL8Qe0GMIlQiQvwZOuRdHg==
   dependencies:
     "@parcel/types" "2.0.0-nightly.651+a67a5f02"
+
+"@parcel/plugin@2.0.0-nightly.72+a0d19756":
+  version "2.0.0-nightly.72"
+  resolved "https://registry.yarnpkg.com/@parcel/plugin/-/plugin-2.0.0-nightly.72.tgz#ad907bc74994430416bde7dc59bb7184bf4355e6"
+  integrity sha512-R1COpRwbinYmOotrE9bpWqeDhdpT6tZT3VBjlqeq/snaQydfC1No4GYHsZYANCg6/U+QJIfRZz12dLDQfL4i4w==
+  dependencies:
+    "@parcel/types" "2.0.0-nightly.72+a0d19756"
+
+"@parcel/reporter-bundle-analyzer@^2.0.0-beta.2":
+  version "2.0.0-nightly.1694"
+  resolved "https://registry.yarnpkg.com/@parcel/reporter-bundle-analyzer/-/reporter-bundle-analyzer-2.0.0-nightly.1694.tgz#4259c1651d18c37eb23f15df7ff1bd91ee0a8311"
+  integrity sha512-avRxTF1tHXRnoufI4Fguv9Z5PoBpvSG0EyPR9RhHaL7DEGXFDw+Rg9We0z6aaEaQYAfSZ0KnTp9cWXjjvIlkbw==
+  dependencies:
+    "@parcel/plugin" "2.0.0-nightly.72+a0d19756"
+    "@parcel/utils" "2.0.0-nightly.72+a0d19756"
+    nullthrows "^1.1.1"
 
 "@parcel/reporter-cli@2.0.0-beta.2":
   version "2.0.0-beta.2"
@@ -2001,6 +2053,11 @@
   resolved "https://registry.yarnpkg.com/@parcel/types/-/types-2.0.0-nightly.651.tgz#b6bc6d4403b67db3bdbf4be10004485884ef8633"
   integrity sha512-pcy5Fc0Us3Hyb4OlQWoAg8NaqZFUuwv8zC20W3RDEDKLSonZLFeVPMPYzc92jFkz1cRyoXLueNDdRAZSXORerw==
 
+"@parcel/types@2.0.0-nightly.72+a0d19756":
+  version "2.0.0-nightly.72"
+  resolved "https://registry.yarnpkg.com/@parcel/types/-/types-2.0.0-nightly.72.tgz#bc7612f3eb2194a89bef95d42ff598727f7c01d4"
+  integrity sha512-NJfVFyUVUjZf3NrFb0CRQk5MPAyr/zpfYZw81eW9JwjFMhBumqW5kN/Qy75UXNznOBhl28q4ZGYQUbucnJxTrw==
+
 "@parcel/utils@2.0.0-beta.2":
   version "2.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/@parcel/utils/-/utils-2.0.0-beta.2.tgz#705fb51f3a6e0e09b8fde86a8998f954ac7fb4d9"
@@ -2050,6 +2107,31 @@
     node-forge "^0.10.0"
     nullthrows "^1.1.1"
     open "^7.0.3"
+
+"@parcel/utils@2.0.0-nightly.72+a0d19756":
+  version "2.0.0-nightly.72"
+  resolved "https://registry.yarnpkg.com/@parcel/utils/-/utils-2.0.0-nightly.72.tgz#f61056ea574bdece26ea67fb16dd64a5cef41e5c"
+  integrity sha512-JaGKf3fArez1WMjzkJrUMHQ/kjRRfRJKOYS00O2d9aUYSlaUA0z744JUl9oTIspnWtqOhNfWEc1IU6mfTCk1dQ==
+  dependencies:
+    "@iarna/toml" "^2.2.0"
+    "@parcel/codeframe" "2.0.0-nightly.72+a0d19756"
+    "@parcel/diagnostic" "2.0.0-nightly.72+a0d19756"
+    "@parcel/logger" "2.0.0-nightly.72+a0d19756"
+    "@parcel/markdown-ansi" "2.0.0-nightly.72+a0d19756"
+    ansi-html "^0.0.7"
+    chalk "^2.4.2"
+    clone "^2.1.1"
+    fast-glob "^3.0.4"
+    is-glob "^4.0.0"
+    is-url "^1.2.2"
+    js-levenshtein "^1.1.6"
+    json5 "^1.0.1"
+    micromatch "^4.0.2"
+    node-forge "^0.8.1"
+    nullthrows "^1.1.1"
+    resolve "^1.12.0"
+    serialize-to-js "^3.0.1"
+    terser "^3.7.3"
 
 "@parcel/validator-typescript@^2.0.0-beta.2":
   version "2.0.0-nightly.651"
@@ -4831,7 +4913,7 @@ ccount@^1.0.0:
   resolved "https://registry.yarnpkg.com/ccount/-/ccount-1.1.0.tgz#246687debb6014735131be8abab2d93898f8d043"
   integrity sha512-vlNK021QdI7PNeiUh/lKkC/mNHHfV0m/Ad5JoI0TYtlBnJAslM/JIkm/tGC88bkLIwO6OQ5uV6ztS6kVAtCDlg==
 
-chalk@2.4.2, chalk@^2.0.0, chalk@^2.4.1, chalk@^2.4.2:
+chalk@2.4.2, chalk@^2.0.0, chalk@^2.4.0, chalk@^2.4.1, chalk@^2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"
   integrity sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==
@@ -6412,6 +6494,15 @@ emotion-theming@^10.0.27:
     "@emotion/weak-memoize" "0.2.5"
     hoist-non-react-statics "^3.3.0"
 
+emphasize@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/emphasize/-/emphasize-2.1.0.tgz#4dbb279f3df30822e8d9c6476b856f09706a0dd8"
+  integrity sha512-wRlO0Qulw2jieQynsS3STzTabIhHCyjTjZraSkchOiT8rdvWZlahJAJ69HRxwGkv2NThmci2MSnDfJ60jB39tw==
+  dependencies:
+    chalk "^2.4.0"
+    highlight.js "~9.12.0"
+    lowlight "~1.9.0"
+
 emphasize@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/emphasize/-/emphasize-4.2.0.tgz#6b6fdc4d212cb7eafea1c7cdd595dfd6cfc508d9"
@@ -6996,7 +7087,7 @@ fast-glob@^2.2.6:
     merge2 "^1.2.3"
     micromatch "^3.1.10"
 
-fast-glob@^3.1.1, fast-glob@^3.2.5:
+fast-glob@^3.0.4, fast-glob@^3.1.1, fast-glob@^3.2.5:
   version "3.2.5"
   resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-3.2.5.tgz#7939af2a656de79a4f1901903ee8adcaa7cb9661"
   integrity sha512-2DtFcgT68wiTTiwZ2hNdJfcHNke9XOfnwmBRWXhmeKM8rF0TGwmC/Qto3S7RoZKp5cilZbxzO5iTNTQsJ+EeDg==
@@ -7052,7 +7143,7 @@ fastq@^1.6.0:
   dependencies:
     reusify "^1.0.4"
 
-fault@^1.0.0:
+fault@^1.0.0, fault@^1.0.2:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/fault/-/fault-1.0.4.tgz#eafcfc0a6d214fc94601e170df29954a4f842f13"
   integrity sha512-CJ0HCB5tL5fYTEA7ToAq5+kTwd++Borf1/bifxd9iT70QcXr4MRrO3Llf8Ifs70q+SJcGHFtnIE/Nw6giCtECA==
@@ -7957,6 +8048,11 @@ highlight.js@~10.4.0:
   version "10.4.1"
   resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-10.4.1.tgz#d48fbcf4a9971c4361b3f95f302747afe19dbad0"
   integrity sha512-yR5lWvNz7c85OhVAEAeFhVCc/GV4C30Fjzc/rCP0aCWzc1UUOPUk55dK/qdwTZHBvMZo+eZ2jpk62ndX/xMFlg==
+
+highlight.js@~9.12.0:
+  version "9.12.0"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.12.0.tgz#e6d9dbe57cbefe60751f02af336195870c90c01e"
+  integrity sha1-5tnb5Xy+/mB1HwKvM2GVhwyQwB4=
 
 history@^4.9.0:
   version "4.10.1"
@@ -9095,6 +9191,11 @@ jest-worker@^26.2.1, jest-worker@^26.3.0, jest-worker@^26.6.2:
     merge-stream "^2.0.0"
     supports-color "^7.0.0"
 
+js-levenshtein@^1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/js-levenshtein/-/js-levenshtein-1.1.6.tgz#c6cee58eb3550372df8deb85fad5ce66ce01d59d"
+  integrity sha512-X2BB11YZtrRqY4EnQcLX5Rh373zbK4alC1FW7D7MBhL2gtcC17cTnr6DmfHZeS0s2rTHjUTMMHfG7gO8SSdw+g==
+
 js-string-escape@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/js-string-escape/-/js-string-escape-1.0.1.tgz#e2625badbc0d67c7533e9edc1068c587ae4137ef"
@@ -9641,6 +9742,14 @@ lowlight@~1.17.0:
   dependencies:
     fault "^1.0.0"
     highlight.js "~10.4.0"
+
+lowlight@~1.9.0:
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/lowlight/-/lowlight-1.9.2.tgz#0b9127e3cec2c3021b7795dd81005c709a42fdd1"
+  integrity sha512-Ek18ElVCf/wF/jEm1b92gTnigh94CtBNWiZ2ad+vTgW7cTmQxUY3I98BjHK68gZAJEWmybGBZgx9qv3QxLQB/Q==
+  dependencies:
+    fault "^1.0.2"
+    highlight.js "~9.12.0"
 
 lru-cache@^5.1.1:
   version "5.1.1"
@@ -10192,6 +10301,11 @@ node-forge@^0.10.0:
   version "0.10.0"
   resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.10.0.tgz#32dea2afb3e9926f02ee5ce8794902691a676bf3"
   integrity sha512-PPmu8eEeG9saEUvI97fm4OYxXVB6bFvyNTyiUOBichBpFG8A1Ljw3bY62+5oOjDEMHRnd0Y7HQ+x7uzxOzC6JA==
+
+node-forge@^0.8.1:
+  version "0.8.5"
+  resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.8.5.tgz#57906f07614dc72762c84cef442f427c0e1b86ee"
+  integrity sha512-vFMQIWt+J/7FLNyKouZ9TazT74PRV3wgv9UT4cRjC8BffxFbKXkgIWR42URCPSnHm/QDz6BOlb2Q0U4+VQT67Q==
 
 node-gyp-build@^4.2.3:
   version "4.2.3"
@@ -13239,6 +13353,11 @@ serialize-javascript@^5.0.1:
   dependencies:
     randombytes "^2.1.0"
 
+serialize-to-js@^3.0.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/serialize-to-js/-/serialize-to-js-3.1.1.tgz#b3e77d0568ee4a60bfe66287f991e104d3a1a4ac"
+  integrity sha512-F+NGU0UHMBO4Q965tjw7rvieNVjlH6Lqi2emq/Lc9LUURYJbiCzmpi4Cy1OOjjVPtxu0c+NE85LU6968Wko5ZA==
+
 serve-favicon@^2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/serve-favicon/-/serve-favicon-2.5.0.tgz#935d240cdfe0f5805307fdfe967d88942a2cbcf0"
@@ -13501,7 +13620,7 @@ source-map-resolve@^0.5.0:
     source-map-url "^0.4.0"
     urix "^0.1.0"
 
-source-map-support@^0.5.16, source-map-support@~0.5.12, source-map-support@~0.5.19:
+source-map-support@^0.5.16, source-map-support@~0.5.10, source-map-support@~0.5.12, source-map-support@~0.5.19:
   version "0.5.19"
   resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.19.tgz#a98b62f86dcaf4f67399648c085291ab9e8fed61"
   integrity sha512-Wonm7zOCIJzBGQdB+thsPar0kYuCIzYvxZwlBa87yi/Mdjv7Tip2cyVbLj5o0cFPN4EVkuTwb3GDDyUx2DGnGw==
@@ -14141,6 +14260,15 @@ terser-webpack-plugin@^5.1.1:
     serialize-javascript "^5.0.1"
     source-map "^0.6.1"
     terser "^5.5.1"
+
+terser@^3.7.3:
+  version "3.17.0"
+  resolved "https://registry.yarnpkg.com/terser/-/terser-3.17.0.tgz#f88ffbeda0deb5637f9d24b0da66f4e15ab10cb2"
+  integrity sha512-/FQzzPJmCpjAH9Xvk2paiWrFq+5M6aVOf+2KRbwhByISDX/EujxsK+BAvrhb6H+2rtrLCHK9N01wO014vrIwVQ==
+  dependencies:
+    commander "^2.19.0"
+    source-map "~0.6.1"
+    source-map-support "~0.5.10"
 
 terser@^4.1.2, terser@^4.6.3, terser@^4.8.0:
   version "4.8.0"

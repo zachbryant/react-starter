@@ -6,5 +6,6 @@
   "validators": {
     "*.{ts,tsx}": ["@parcel/validator-typescript"]
   },
-  "resolvers": ["...", "parcel-resolver-tspaths"]
+  "resolvers": ["...", "parcel-resolver-tspaths"],
+  "reporters": ["...", "@parcel/reporter-bundle-analyzer"]
 }
