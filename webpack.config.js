@@ -19,8 +19,8 @@ module.exports = (env) => {
 	const isDevelopment = !env.production;
 	const cwdPath = __dirname;
 	const outputPath = path.resolve(cwdPath, 'dist');
-	const publicPath = path.resolve(cwdPath, 'public');
 	const srcPath = path.resolve(cwdPath, 'src');
+	const assetPath = path.resolve(srcPath, 'assets');
 
 	return {
 		// TODO make entry dynamic
@@ -44,9 +44,9 @@ module.exports = (env) => {
 			new CleanWebpackPlugin(),
 			new HtmlWebpackPlugin({
 				hash: !isDevelopment,
-				template: path.resolve(publicPath, 'index.html'),
+				template: path.resolve(srcPath, 'index.html'),
 				filename: path.resolve(outputPath, 'index.html'),
-				favicon: path.resolve(publicPath, 'favicon.ico'),
+				favicon: path.resolve(assetPath, 'images/favicon.ico'),
 			}),
 			new SubresourceIntegrityPlugin({
 				hashFuncNames: ['sha384', 'sha512'],

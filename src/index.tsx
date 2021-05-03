@@ -1,4 +1,4 @@
-import 'tailwindcss/tailwind.css';
+import 'tailwindcss/dist/tailwind.min';
 import '@styles/index.scss';
 
 import React from 'react';

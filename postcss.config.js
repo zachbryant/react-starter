@@ -25,5 +25,6 @@ const productionPlugins = isProduction
 
 module.exports = {
 	parser: 'postcss-scss',
+	modules: true,
 	plugins: [require('postcss-import'), tailwind('./tailwind.config.js'), ...productionPlugins],
 };
