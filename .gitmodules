@@ -1,6 +1,0 @@
-[submodule "parcel-plugin-bundle-manifest"]
-	path = parcel-plugin-bundle-manifest
-	url = git@github.com:mugi-uno/parcel-plugin-bundle-manifest.git
-[submodule "parcel-plugin-typescript-paths"]
-	path = parcel-plugin-typescript-paths
-	url = git@github.com:boboben1/parcel-plugin-typescript-paths.git
