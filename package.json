@@ -1,7 +1,6 @@
 {
   "name": "frontend-starter",
   "version": "1.0.0",
-  "main": "index.js",
   "repository": "git@github.com:zachbryant/react-starter.git",
   "homepage": "https://github.com/zachbryant/react-starter",
   "author": "Zach Bryant <zdb282@gmail.com>",
@@ -25,7 +24,7 @@
     "storybook": "start-storybook -p 6006",
     "build:storybook": "build-storybook",
     "test": "echo TEST SCRIPT TODO",
-    "clean": "rm -rf dist/ .cache/",
+    "clean": "rm -rf dist/ .cache/ .parcel-cache/",
     "purge": "npm run clean && rm -rf node_modules/"
   },
   "browserslist": {
@@ -47,6 +46,7 @@
     "react-router-dom": "^5.2.0",
     "react-spring": "^9.1.2",
     "recoil": "^0.2.0",
+    "rfs": "^9.0.3",
     "rxjs": "^6.6.7",
     "tailwindcss": "^2.1.2"
   },
@@ -92,7 +92,7 @@
     "npm-run-all": "^4.1.5",
     "onmyjs": "^1.1.0",
     "parcel": "^2.0.0-beta.2",
-    "parcel-resolver-tspaths": "0.0.3",
+    "parcel-resolver-tspaths": "0.0.4",
     "postcss": "^8.2.13",
     "postcss-cli": "^8.3.1",
     "postcss-import": "^14.0.1",
