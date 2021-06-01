@@ -1,10 +1,21 @@
-const customWebpackConfig = require('../webpack.config');
+const customWebpackConfig = require('../webpack.config')({});
 
 module.exports = {
+	core: {
+		builder: 'webpack5',
+	},
 	stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
 	addons: [
-		'@storybook/addon-links',
+		'@storybook/addon-actions',
+		'@storybook/addon-docs',
+		//	'@storybook/addon-console',
+		'@storybook/addon-controls',
 		'@storybook/addon-essentials',
+		'@storybook/addon-jest',
+		'@storybook/addon-links',
+		'@storybook/addon-storyshots',
+		'@storybook/addon-toolbars',
+		'@storybook/addon-viewport',
 		{
 			name: '@storybook/addon-postcss',
 			options: {
@@ -14,13 +25,13 @@ module.exports = {
 			},
 		},
 	],
-	webpackFinal: ( config ) => {
+	webpackFinal: (config) => {
 		return {
 			...config,
-			module: {
-				...config.module,
-				...customWebpackConfig.module
-			}
+			resolve: {
+				...config.resolve,
+				plugins: [...customWebpackConfig.resolve.plugins],
+			},
 		};
-  },
+	},
 };
