@@ -9,6 +9,12 @@ const WebpackAssetsManifest = require('webpack-assets-manifest');
 const TSConfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
+//const StylelintPlugin = require('stylelint-webpack-plugin');
+const CircularDependencyPlugin = require('circular-dependency-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const DuplicatePackageCheckerPlugin = require('duplicate-package-checker-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 const path = require('path');
 const chalk = require('chalk');
@@ -24,7 +30,7 @@ module.exports = (env) => {
 
 	return {
 		// TODO make entry dynamic
-		entry: path.resolve(srcPath, 'index.tsx'),
+		entry: path.resolve(srcPath, 'ui', 'index.tsx'),
 		target: 'web',
 		mode: isDevelopment ? 'development' : 'production',
 		stats: isDevelopment ? 'errors-warnings' : 'normal',
@@ -39,12 +45,14 @@ module.exports = (env) => {
 			open: true,
 		},
 		devtool: isDevelopment ? 'eval' : 'source-map',
-		cache: true,
+		cache: {
+			type: 'filesystem',
+		},
 		plugins: [
 			new CleanWebpackPlugin(),
 			new HtmlWebpackPlugin({
 				hash: !isDevelopment,
-				template: path.resolve(srcPath, 'index.html'),
+				template: path.resolve(srcPath, 'ui', 'index.html'),
 				filename: path.resolve(outputPath, 'index.html'),
 				favicon: path.resolve(assetPath, 'images/favicon.ico'),
 			}),
@@ -61,8 +69,27 @@ module.exports = (env) => {
 				format: '  build [:bar] ' + chalk.green.bold(':percent') + ' (:elapsed seconds)',
 				clear: true,
 			}),
+			new ESLintPlugin({ cache: true, exclude: ['node_modules/', 'dist', 'templates'] }),
+			//new StylelintPlugin({ cache: true }),
+			new CircularDependencyPlugin({
+				include: /src/,
+				failOnError: true,
+				// allow import cycles that include an asyncronous import,
+				// e.g. via import(/* webpackMode: "weak" */ './file.js')
+				allowAsyncCycles: false,
+				cwd: process.cwd(),
+			}),
+			new BundleAnalyzerPlugin(),
+			new DuplicatePackageCheckerPlugin(),
+			new CompressionPlugin({
+				algorithm: 'gzip',
+			}),
 		],
 		optimization: {
+			splitChunks: {
+				chunks: !isDevelopment ? 'all' : 'initial',
+			},
+			runtimeChunk: !isDevelopment,
 			minimize: !isDevelopment,
 			minimizer: [
 				new TerserWebpackPlugin({
@@ -159,10 +186,15 @@ module.exports = (env) => {
 					},
 				},
 				{
-					// Images (uses irl-loader as fallback)
-					test: /\.(png|svg|gif|ico|webp)$/,
+					// Images (uses url-loader as fallback)
+					test: /\.(png|gif|ico|webp|webm)$/,
 					exclude: [/node_modules/, /\.jpe?g/], // Fuck jpeg! All my homies hate jpeg
 					//use: ['file-loader?name=[name].[ext]&limit=8192'],
+					type: 'asset',
+				},
+				{
+					test: /\.svg$/,
+					use: [{ loader: 'svg-sprite-loader' }, 'svg-transform-loader', 'svgo-loader'],
 					type: 'asset',
 				},
 				{
