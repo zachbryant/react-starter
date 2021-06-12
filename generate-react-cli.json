@@ -5,25 +5,49 @@
   "testLibrary": "Testing Library",
   "component": {
     "default": {
-      "customTemplates": {},
+      "customTemplates": {
+        "index":      "src/config/templates/index.ts",
+        "component":  "src/config/templates/TemplateName.tsx",
+        "lazy":       "src/config/templates/TemplateName.lazy.tsx",
+        "test":       "src/config/templates/TemplateName.test.tsx",
+        "story":      "src/config/templates/TemplateName.stories.tsx",
+        "style":      "src/config/templates/TemplateName.module.scss"
+      },
       "path": "src/components",
-      "withLazy": false,
+      "withIndex": true,
+      "withLazy": true,
       "withStory": true,
       "withStyle": true,
       "withTest": true
     },
     "page": {
-      "customTemplates": {},
+      "customTemplates": {
+        "index":      "src/config/templates/index.ts",
+        "component":  "src/config/templates/TemplateName.tsx",
+        "lazy":       "src/config/templates/TemplateName.lazy.tsx",
+        "test":       "src/config/templates/TemplateName.test.tsx",
+        "story":      "src/config/templates/TemplateName.stories.tsx",
+        "style":      "src/config/templates/TemplateName.module.scss"
+      },
       "path": "src/pages",
-      "withLazy": false,
+      "withIndex": true,
+      "withLazy": true,
       "withStory": true,
       "withStyle": true,
       "withTest": true
     },
     "layout": {
-      "customTemplates": {},
+      "customTemplates": {
+        "index":      "src/config/templates/index.ts",
+        "component":  "src/config/templates/TemplateName.tsx",
+        "lazy":       "src/config/templates/TemplateName.lazy.tsx",
+        "test":       "src/config/templates/TemplateName.test.tsx",
+        "story":      "src/config/templates/TemplateName.stories.tsx",
+        "style":      "src/config/templates/TemplateName.module.scss"
+      },
       "path": "src/layouts",
-      "withLazy": false,
+      "withIndex": true,
+      "withLazy": true,
       "withStory": true,
       "withStyle": true,
       "withTest": true
