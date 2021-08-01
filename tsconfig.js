@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const generatePaths = require('tsconfig-paths-autogen').default;
-const onmyjs = require('onmyjs').default;
+const { generatePaths } = require('tsconfig-paths-autogen');
+const { onmyjs } = require('onmyjs');
 
 const baseUrl = 'src';
 
 module.exports = {
 	compilerOptions: {
-		target: 'es2020',
+		target: 'esnext',
 		lib: ['dom', 'dom.iterable', 'esnext'],
 		allowJs: true,
 		skipLibCheck: true,
@@ -15,7 +15,7 @@ module.exports = {
 		noImplicitReturns: true,
 		strict: true,
 		forceConsistentCasingInFileNames: true,
-		module: 'es2020',
+		module: 'esnext',
 		moduleResolution: 'node',
 		resolveJsonModule: true,
 		isolatedModules: true,
@@ -26,14 +26,15 @@ module.exports = {
 		paths: generatePaths(baseUrl, {
 			rootAlias: '@',
 			maxDirectoryDepth: 2,
-			excludeAliasForSubDirectories: ['components'],
+			excludeAliasForDirectories: ['dist'],
+			excludeAliasForSubDirectories: [],
 			includeAliasForDirectories: {
-				common: 'components/common',
+				common: 'ui/fragments/common',
 			},
 		}),
 	},
 	include: ['src'],
-	exclude: ['lib', 'build', 'node_modules', 'scripts', 'webpack', 'jest', 'tests', 'templates'],
+	exclude: ['**/lib', 'build', '**/dist', 'node_modules', 'scripts', 'webpack', '**/templates'],
 };
 
 onmyjs(module.exports, undefined, true);

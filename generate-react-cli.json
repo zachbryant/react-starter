@@ -6,14 +6,14 @@
   "component": {
     "default": {
       "customTemplates": {
-        "index":      "src/config/templates/index.ts",
-        "component":  "src/config/templates/TemplateName.tsx",
-        "lazy":       "src/config/templates/TemplateName.lazy.tsx",
-        "test":       "src/config/templates/TemplateName.test.tsx",
-        "story":      "src/config/templates/TemplateName.stories.tsx",
-        "style":      "src/config/templates/TemplateName.module.scss"
+        "index": "src/config/templates/index.ts",
+        "component": "src/config/templates/TemplateName.tsx",
+        "lazy": "src/config/templates/TemplateName.lazy.tsx",
+        "test": "src/config/templates/TemplateName.test.tsx",
+        "story": "src/config/templates/TemplateName.stories.tsx",
+        "style": "src/config/templates/TemplateName.module.scss"
       },
-      "path": "src/components",
+      "path": "src/ui/fragments/",
       "withIndex": true,
       "withLazy": true,
       "withStory": true,
@@ -22,14 +22,14 @@
     },
     "page": {
       "customTemplates": {
-        "index":      "src/config/templates/index.ts",
-        "component":  "src/config/templates/TemplateName.tsx",
-        "lazy":       "src/config/templates/TemplateName.lazy.tsx",
-        "test":       "src/config/templates/TemplateName.test.tsx",
-        "story":      "src/config/templates/TemplateName.stories.tsx",
-        "style":      "src/config/templates/TemplateName.module.scss"
+        "index": "src/config/templates/index.ts",
+        "component": "src/config/templates/TemplateName.tsx",
+        "lazy": "src/config/templates/TemplateName.lazy.tsx",
+        "test": "src/config/templates/TemplateName.test.tsx",
+        "story": "src/config/templates/TemplateName.stories.tsx",
+        "style": "src/config/templates/TemplateName.module.scss"
       },
-      "path": "src/pages",
+      "path": "src/ui/pages/",
       "withIndex": true,
       "withLazy": true,
       "withStory": true,
@@ -38,14 +38,14 @@
     },
     "layout": {
       "customTemplates": {
-        "index":      "src/config/templates/index.ts",
-        "component":  "src/config/templates/TemplateName.tsx",
-        "lazy":       "src/config/templates/TemplateName.lazy.tsx",
-        "test":       "src/config/templates/TemplateName.test.tsx",
-        "story":      "src/config/templates/TemplateName.stories.tsx",
-        "style":      "src/config/templates/TemplateName.module.scss"
+        "index": "src/config/templates/index.ts",
+        "component": "src/config/templates/TemplateName.tsx",
+        "lazy": "src/config/templates/TemplateName.lazy.tsx",
+        "test": "src/config/templates/TemplateName.test.tsx",
+        "story": "src/config/templates/TemplateName.stories.tsx",
+        "style": "src/config/templates/TemplateName.module.scss"
       },
-      "path": "src/layouts",
+      "path": "src/ui/layouts/",
       "withIndex": true,
       "withLazy": true,
       "withStory": true,

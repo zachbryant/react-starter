@@ -1,5 +1,5 @@
-import { ReactChild, ReactChildren } from 'react';
+import { ReactChild, ReactChildren, ReactNode } from 'react';
 
-export interface IChildProps {
-	children?: ReactChild | ReactChildren | JSX.Element[];
+export interface IChildrenProps {
+	children?: ReactChild | ReactChildren | JSX.Element[] | ReactNode;
 }

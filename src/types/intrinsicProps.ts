@@ -1,4 +1,4 @@
-import { IChildProps } from './childProps';
+import { IChildrenProps } from './childProps';
 import { IStyleProps } from './styleProps';
 
-export type IIntrinsicProps = IChildProps & IStyleProps;
+export type IIntrinsicProps = IChildrenProps & IStyleProps;
