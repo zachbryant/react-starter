@@ -22,15 +22,18 @@ const tsconfigJs = require('tsconfig.js');
 tsconfigJs.watch();
 
 module.exports = (env) => {
-	const isDevelopment = !env.production;
+	const isProduction = env.production ?? false;
+	const isDevelopment = !isProduction;
 	const cwdPath = __dirname;
 	const outputPath = path.resolve(cwdPath, 'dist');
 	const srcPath = path.resolve(cwdPath, 'src');
+	const pagePath = path.resolve(srcPath, 'ui/pages');
 	const assetPath = path.resolve(srcPath, 'assets');
 
 	return {
-		// TODO make entry dynamic
-		entry: path.resolve(srcPath, 'ui', 'index.tsx'),
+		entry: {
+			main: path.resolve(pagePath, 'index.tsx'),
+		},
 		target: 'web',
 		mode: isDevelopment ? 'development' : 'production',
 		stats: isDevelopment ? 'errors-warnings' : 'normal',
@@ -51,14 +54,14 @@ module.exports = (env) => {
 		plugins: [
 			new CleanWebpackPlugin(),
 			new HtmlWebpackPlugin({
-				hash: !isDevelopment,
-				template: path.resolve(srcPath, 'ui', 'index.html'),
+				hash: isProduction,
+				template: path.resolve(pagePath, 'index.html'),
 				filename: path.resolve(outputPath, 'index.html'),
 				favicon: path.resolve(assetPath, 'images/favicon.ico'),
 			}),
 			new SubresourceIntegrityPlugin({
 				hashFuncNames: ['sha384', 'sha512'],
-				enabled: !isDevelopment,
+				enabled: isProduction,
 			}),
 			new WebpackAssetsManifest({
 				integrity: true,
@@ -74,12 +77,15 @@ module.exports = (env) => {
 			new CircularDependencyPlugin({
 				include: /src/,
 				failOnError: true,
-				// allow import cycles that include an asyncronous import,
+				// allow import cycles that include an asynchronous import,
 				// e.g. via import(/* webpackMode: "weak" */ './file.js')
 				allowAsyncCycles: false,
 				cwd: process.cwd(),
 			}),
-			new BundleAnalyzerPlugin(),
+			new BundleAnalyzerPlugin({
+				analyzerMode: 'static',
+				openAnalyzer: isProduction,
+			}),
 			new DuplicatePackageCheckerPlugin(),
 			new CompressionPlugin({
 				algorithm: 'gzip',
@@ -87,10 +93,18 @@ module.exports = (env) => {
 		],
 		optimization: {
 			splitChunks: {
-				chunks: !isDevelopment ? 'all' : 'initial',
+				chunks: isProduction ? 'all' : 'initial',
+				name: false,
+				cacheGroups: {
+					vendor: {
+						test: /[\\/]node_modules[\\/]/,
+						name: 'vendors',
+						chunks: 'all',
+					},
+				},
 			},
-			runtimeChunk: !isDevelopment,
-			minimize: !isDevelopment,
+			runtimeChunk: 'single',
+			minimize: isProduction,
 			minimizer: [
 				new TerserWebpackPlugin({
 					parallel: true,
@@ -125,17 +139,21 @@ module.exports = (env) => {
 			rules: [
 				{
 					test: /\.tsx?$/,
-					loader: 'ts-loader',
+					loader: 'esbuild-loader',
 					exclude: [/node_modules/, /\.stories\.tsx?$/, /dist$/, /build$/],
 					options: {
-						transpileOnly: true,
+						loader: 'tsx',
+						target: 'esnext',
 					},
 				},
 				{
-					test: /\.js$/,
-					loader: 'source-map-loader',
-					enforce: 'pre',
-					exclude: [/node_modules/, /dist$/, /build$/],
+					test: /\.jsx?$/,
+					loader: 'esbuild-loader',
+					exclude: [/node_modules/, /\.stories\.jsx?$/, /dist$/, /build$/],
+					options: {
+						loader: 'jsx',
+						target: 'esnext',
+					},
 				},
 				{
 					test: /\.module\.(s(a|c)|c)ss$/,
@@ -145,14 +163,14 @@ module.exports = (env) => {
 							loader: 'css-loader',
 							options: {
 								modules: true,
-								sourceMap: !isDevelopment,
+								sourceMap: isProduction,
 								importLoaders: 1,
 							},
 						},
 						{
 							loader: 'sass-loader',
 							options: {
-								sourceMap: !isDevelopment,
+								sourceMap: isProduction,
 							},
 						},
 						'postcss-loader',
@@ -166,13 +184,14 @@ module.exports = (env) => {
 						{
 							loader: 'css-loader',
 							options: {
+								sourceMap: isProduction,
 								importLoaders: 1,
 							},
 						},
 						{
 							loader: 'sass-loader',
 							options: {
-								sourceMap: !isDevelopment,
+								sourceMap: isProduction,
 							},
 						},
 						'postcss-loader',

@@ -1,13 +1,7 @@
 module.exports = {
+	mode: 'jit',
 	purge: {
-		content: [
-			'./src/**/*.html',
-			'./src/**/*.tsx',
-			'./src/**/*.ts',
-			'./src/**/*.scss',
-			'./src/**/*.sass',
-			'./src/**/*.css',
-		],
+		content: ['./src/**/*.{html,tsx,jsx,ts,js,scss,sass,css}'],
 	},
 	darkMode: 'class', // or 'media' or 'class'
 	theme: {
@@ -22,8 +16,11 @@ module.exports = {
 			},
 		},
 	},
-	variants: {},
-	plugins: [],
+	plugins: [
+		require('@tailwindcss/typography'),
+		require('@tailwindcss/forms'),
+		require('@tailwindcss/line-clamp'),
+	],
 	future: {
 		removeDeprecatedGapUtilities: true,
 		purgeLayersByDefault: true,
