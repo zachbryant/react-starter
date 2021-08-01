@@ -18,13 +18,11 @@ const CompressionPlugin = require('compression-webpack-plugin');
 
 const path = require('path');
 const chalk = require('chalk');
-const tsconfigJs = require('tsconfig.js');
-tsconfigJs.watch();
 
 module.exports = (env) => {
 	const isProduction = env.production ?? false;
 	const isDevelopment = !isProduction;
-	const cwdPath = __dirname;
+	const cwdPath = process.cwd();
 	const outputPath = path.resolve(cwdPath, 'dist');
 	const srcPath = path.resolve(cwdPath, 'src');
 	const pagePath = path.resolve(srcPath, 'ui/pages');
@@ -39,7 +37,7 @@ module.exports = (env) => {
 		stats: isDevelopment ? 'errors-warnings' : 'normal',
 		devServer: {
 			host: '0.0.0.0',
-			port: 8080,
+			port: 1234,
 			overlay: {
 				errors: true,
 				warnings: false,
@@ -80,7 +78,7 @@ module.exports = (env) => {
 				// allow import cycles that include an asynchronous import,
 				// e.g. via import(/* webpackMode: "weak" */ './file.js')
 				allowAsyncCycles: false,
-				cwd: process.cwd(),
+				cwd: cwdPath,
 			}),
 			new BundleAnalyzerPlugin({
 				analyzerMode: 'static',

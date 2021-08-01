@@ -1,13 +1,9 @@
-import path from 'path';
-import * as React from 'react';
-
-import {
-	AsyncComponent,
-	IAsyncFunctionPropType,
-	IAsyncViewsPropType,
-} from '@/ui/fragments/common/Async';
+import { AsyncComponent, IAsyncFunctionPropType, IAsyncViewsPropType } from '@/ui/fragments/common/Async';
 import { WebpackLoadStrategy } from '@models/webpackLoadingStrategy';
 import { importByWebpackLoadStrategy } from '@utils/import';
+import { sleeper } from '@utils/promise';
+import path from 'path';
+import * as React from 'react';
 
 export interface IAsyncTemplateNameProps {
 	loadStrategy?: WebpackLoadStrategy;
@@ -24,7 +20,7 @@ export const TemplateName = (props: IAsyncTemplateNameProps) => {
 		placeholderComponent: LoadingComponent,
 	};
 	const asyncFunction: IAsyncFunctionPropType = {
-		loadingFunction:
+		loadingFunction: Promise.resolve().then(sleeper(10 * 1000))
 	};
 	return <AsyncComponent views={asyncViews} function={asyncFunction} />;
 };

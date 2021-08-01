@@ -37,4 +37,4 @@ module.exports = {
 	exclude: ['**/lib', 'build', '**/dist', 'node_modules', 'scripts', 'webpack', '**/templates'],
 };
 
-onmyjs(module.exports, undefined, true);
+onmyjs(module.exports, undefined, false);

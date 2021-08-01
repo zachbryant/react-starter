@@ -18,7 +18,7 @@ export interface IAsyncViewsPropType<
 	ErrorType = unknown
 > {
 	component: FulfilledChildren<DataType>;
-	placeholderComponent?: PendingChildren<PendingType>;
+	loadingComponent?: PendingChildren<PendingType>;
 	errorComponent?: RejectedChildren<ErrorType>;
 }
 
@@ -28,7 +28,7 @@ export interface IAsyncComponentProps {
 }
 
 export function AsyncComponent(props: IAsyncComponentProps) {
-	const { component, placeholderComponent, errorComponent } = props.views;
+	const { component, loadingComponent: placeholderComponent, errorComponent } = props.views;
 	const { loadingFunction, args } = props.function;
 	return (
 		<Async promiseFn={loadingFunction} {...args}>
