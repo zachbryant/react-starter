@@ -7,8 +7,8 @@ import {
 	RejectedChildren,
 } from 'react-async';
 
-export interface IAsyncFunctionPropType<ParametersType = unknown> {
-	loadingFunction: PromiseFn<ParametersType>;
+export interface IAsyncFunctionAndArgsType<ParametersType = any> {
+	promiseFunction: PromiseFn<ParametersType>;
 	args: Record<string, ParametersType>;
 }
 
@@ -24,14 +24,14 @@ export interface IAsyncViewsPropType<
 
 export interface IAsyncComponentProps {
 	views: IAsyncViewsPropType;
-	function: IAsyncFunctionPropType;
+	functionAndArgs: IAsyncFunctionAndArgsType;
 }
 
 export function AsyncComponent(props: IAsyncComponentProps) {
 	const { component, loadingComponent: placeholderComponent, errorComponent } = props.views;
-	const { loadingFunction, args } = props.function;
+	const { promiseFunction, args } = props.functionAndArgs;
 	return (
-		<Async promiseFn={loadingFunction} {...args}>
+		<Async promiseFn={promiseFunction} {...args}>
 			<Async.Pending>{placeholderComponent}</Async.Pending>
 			<Async.Rejected>{errorComponent}</Async.Rejected>
 			<Async.Fulfilled>{component}</Async.Fulfilled>
