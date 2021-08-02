@@ -1,4 +1,4 @@
-import { AsyncComponent, IAsyncFunctionPropType, IAsyncViewsPropType } from '@/ui/fragments/common/Async';
+import { AsyncComponent, IAsyncFunctionPropType, IAsyncViewsPropType } from '@fragments/common/Async';
 import { WebpackLoadStrategy } from '@models/webpackLoadingStrategy';
 import { importByWebpackLoadStrategy } from '@utils/import';
 import { sleeper } from '@utils/promise';

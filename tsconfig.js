@@ -33,7 +33,7 @@ module.exports = {
 			},
 		}),
 	},
-	include: ['src'],
+	include: ['src', './jest-setup.ts'],
 	exclude: ['**/lib', 'build', '**/dist', 'node_modules', 'scripts', 'webpack', '**/templates'],
 };
 

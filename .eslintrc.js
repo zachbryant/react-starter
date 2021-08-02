@@ -19,6 +19,7 @@ module.exports = {
 		'prettier',
 		'plugin:prettier/recommended',
 		'plugin:jsx-a11y/recommended',
+		'plugin:jest-dom/recommended',
 	],
 	rules: {
 		// Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
@@ -27,6 +28,10 @@ module.exports = {
 		'@typescript-eslint/no-explicit-any': 'off',
 		'react-hooks/rules-of-hooks': 'error',
 		'react-hooks/exhaustive-deps': 'warn',
+		'jest-dom/prefer-checked': 'error',
+		'jest-dom/prefer-enabled-disabled': 'error',
+		'jest-dom/prefer-required': 'error',
+		'jest-dom/prefer-to-have-attribute': 'error',
 	},
 	ignorePatterns: ['**/templates/*.*'],
 };
