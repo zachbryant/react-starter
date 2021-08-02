@@ -1,0 +1,11 @@
+{
+  "browserslist": {
+    "production": ["last 2 versions", "unreleased versions", "> 0.5%", "not dead", "Firefox ESR"],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version",
+      "last 1 edge version"
+    ]
+  }
+}

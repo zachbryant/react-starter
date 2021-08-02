@@ -81,8 +81,7 @@ module.exports = (env) => {
 				cwd: cwdPath,
 			}),
 			new BundleAnalyzerPlugin({
-				analyzerMode: 'static',
-				openAnalyzer: isProduction,
+				analyzerMode: 'server',
 			}),
 			new DuplicatePackageCheckerPlugin(),
 			new CompressionPlugin({
