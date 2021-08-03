@@ -12,11 +12,7 @@ export interface IAsyncFunctionAndArgsType<ParametersType = any> {
 	args: Record<string, ParametersType>;
 }
 
-export interface IAsyncViewsPropType<
-	DataType = unknown,
-	PendingType = unknown,
-	ErrorType = unknown
-> {
+export interface IAsyncViewsPropType<DataType = any, PendingType = any, ErrorType = any> {
 	component: FulfilledChildren<DataType>;
 	loadingComponent?: PendingChildren<PendingType>;
 	errorComponent?: RejectedChildren<ErrorType>;
