@@ -1,4 +1,4 @@
-const customWebpackConfig = require('../webpack.config')({});
+const customWebpackConfig = require('../webpack.config.cjs')({});
 
 module.exports = {
 	core: {
@@ -6,16 +6,16 @@ module.exports = {
 	},
 	stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
 	addons: [
-		'@storybook/addon-actions',
-		'@storybook/addon-docs',
-		//	'@storybook/addon-console',
-		'@storybook/addon-controls',
+		//'@storybook/addon-actions',
+		//'@storybook/addon-docs',
+		//'@storybook/addon-console',
+		//'@storybook/addon-controls',
 		'@storybook/addon-essentials',
 		'@storybook/addon-jest',
 		'@storybook/addon-links',
 		'@storybook/addon-storyshots',
-		'@storybook/addon-toolbars',
-		'@storybook/addon-viewport',
+		//'@storybook/addon-toolbars',
+		//'@storybook/addon-viewport',
 		{
 			name: '@storybook/addon-postcss',
 			options: {
