@@ -4,18 +4,15 @@ module.exports = {
 	core: {
 		builder: 'webpack5',
 	},
-	stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+	features: {
+		previewCsfV3: true,
+	},
+	stories: ['../src/ui/**/*.stories.@(tsx|jsx|mdx)'],
 	addons: [
-		//'@storybook/addon-actions',
-		//'@storybook/addon-docs',
-		//'@storybook/addon-console',
-		//'@storybook/addon-controls',
 		'@storybook/addon-essentials',
 		'@storybook/addon-jest',
 		'@storybook/addon-links',
 		'@storybook/addon-storyshots',
-		//'@storybook/addon-toolbars',
-		//'@storybook/addon-viewport',
 		{
 			name: '@storybook/addon-postcss',
 			options: {
@@ -33,5 +30,14 @@ module.exports = {
 				plugins: [...customWebpackConfig.resolve.plugins],
 			},
 		};
+	},
+	typescript: {
+		reactDocgen: 'react-docgen-typescript',
+		reactDocgenTypescriptOptions: {
+			compilerOptions: {
+				allowSyntheticDefaultImports: true,
+				esModuleInterop: true,
+			},
+		},
 	},
 };

@@ -6,7 +6,6 @@ const baseUrl = 'src';
 
 module.exports = {
 	compilerOptions: {
-		target: 'esnext',
 		lib: ['dom', 'dom.iterable', 'esnext'],
 		allowJs: true,
 		skipLibCheck: true,
@@ -15,6 +14,7 @@ module.exports = {
 		noImplicitReturns: true,
 		strict: true,
 		forceConsistentCasingInFileNames: true,
+		target: 'es6',
 		module: 'esnext',
 		moduleResolution: 'node',
 		resolveJsonModule: true,

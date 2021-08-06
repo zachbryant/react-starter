@@ -8,14 +8,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 const productionPlugins = isProduction
 	? [
 			purgecss({
-				content: [
-					'./src/**/*.html',
-					'./src/**/*.tsx',
-					'./src/**/*.ts',
-					'./src/**/*.scss',
-					'./src/**/*.sass',
-					'./src/**/*.css',
-				],
+				content: ['./src/**/*.(html|tsx|ts|js|jsx|scss|sass|css)'],
 				defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
 			}),
 			cssnano({ preset: 'default' }),

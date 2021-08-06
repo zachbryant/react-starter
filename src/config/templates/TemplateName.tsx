@@ -6,8 +6,6 @@ export interface TemplateNameProps {}
 export const TemplateName: React.FC<TemplateNameProps> = (props) => (
 	<div className={''} data-testid="TemplateName">
 		TemplateName Component
-		{props}
-		{styles}
 	</div>
 );
 

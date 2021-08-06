@@ -10,7 +10,7 @@
         "component": "src/config/templates/TemplateName.tsx",
         "lazy": "src/config/templates/TemplateName.lazy.tsx",
         "test": "src/config/templates/TemplateName.test.tsx",
-        "story": "src/config/templates/TemplateName.stories.tsx",
+        "story": "src/config/templates/components/TemplateName.stories.tsx",
         "style": "src/config/templates/TemplateName.module.scss"
       },
       "path": "src/ui/fragments/",
@@ -26,7 +26,7 @@
         "component": "src/config/templates/TemplateName.tsx",
         "lazy": "src/config/templates/TemplateName.lazy.tsx",
         "test": "src/config/templates/TemplateName.test.tsx",
-        "story": "src/config/templates/TemplateName.stories.tsx",
+        "story": "src/config/templates/pages/TemplateName.stories.tsx",
         "style": "src/config/templates/TemplateName.module.scss"
       },
       "path": "src/ui/pages/",
@@ -42,7 +42,7 @@
         "component": "src/config/templates/TemplateName.tsx",
         "lazy": "src/config/templates/TemplateName.lazy.tsx",
         "test": "src/config/templates/TemplateName.test.tsx",
-        "story": "src/config/templates/TemplateName.stories.tsx",
+        "story": "src/config/templates/layout/TemplateName.stories.tsx",
         "style": "src/config/templates/TemplateName.module.scss"
       },
       "path": "src/ui/layouts/",
