@@ -3,7 +3,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const SubresourceIntegrityPlugin = require('webpack-subresource-integrity');
+const { SubresourceIntegrityPlugin } = require('webpack-subresource-integrity');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const WebpackAssetsManifest = require('webpack-assets-manifest');
 const TSConfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
@@ -38,9 +38,12 @@ module.exports = (env) => {
 		devServer: {
 			host: '0.0.0.0',
 			port: 1234,
-			overlay: {
-				errors: true,
-				warnings: false,
+			client: {
+				overlay: {
+					errors: true,
+					warnings: false,
+				},
+				progress: true,
 			},
 			hot: true,
 			open: true,
@@ -58,8 +61,7 @@ module.exports = (env) => {
 				favicon: path.resolve(assetPath, 'images/favicon.ico'),
 			}),
 			new SubresourceIntegrityPlugin({
-				hashFuncNames: ['sha384', 'sha512'],
-				enabled: isProduction,
+				hashFuncNames: ['sha512'],
 			}),
 			new WebpackAssetsManifest({
 				integrity: true,
@@ -118,15 +120,10 @@ module.exports = (env) => {
 					},
 				}),
 				new CssMinimizerPlugin({
+					// Pick based on benchmark https://goalsmashers.github.io/css-minification-benchmark/
+					minify: CssMinimizerPlugin.cssoMinify,
 					parallel: true,
-					minimizerOptions: {
-						preset: [
-							'default',
-							{
-								discardComments: { removeAll: true },
-							},
-						],
-					},
+					minimizerOptions: { restructure: isProduction },
 				}),
 			],
 			usedExports: true,
