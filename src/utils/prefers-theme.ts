@@ -20,11 +20,8 @@ export function applyThemeToSelector(selector: string, theme: string, attributeN
 }
 
 export function applyThemePreference(selector: string, attributeName = 'theme') {
-	if (prefersDark() || !prefersLight()) {
-		applyThemeToSelector(selector, 'dark', attributeName);
-	} else {
-		applyThemeToSelector(selector, 'light', attributeName);
-	}
+	const theme = getPreferredTheme();
+	applyThemeToSelector(selector, theme, attributeName);
 }
 
 export function getPreferredTheme() {
