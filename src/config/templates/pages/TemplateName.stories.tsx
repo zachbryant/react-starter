@@ -1,5 +1,5 @@
 import userEvent from '@testing-library/user-event';
-import { TemplateName, TemplateNameProps } from './TemplateName';
+import { TemplateName, ITemplateNameProps } from './TemplateName';
 
 export default {
 	component: TemplateName,
