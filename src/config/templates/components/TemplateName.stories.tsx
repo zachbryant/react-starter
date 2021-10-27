@@ -8,12 +8,18 @@ export default {
 	argTypes: {
 		variant: {
 			options: ['primary', 'secondary'],
+			defaultValue: 'primary',
 			control: { type: 'radio' },
 		},
 	},
 };
+
+const defaultArgs: ITemplateNameProps = {
+	/**/
+};
+
 export const Default = {
-	args: {},
+	args: defaultArgs,
 	render: undefined,
 	play: () => {
 		/**Do userEvent stuff */

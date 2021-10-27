@@ -1,4 +1,10 @@
 @import './base.scss';
+@import './google-fonts-v2.scss';
+
+@include google-font {
+	@include google-font(Nunito, 400 600 700, normal italic);
+	@include google-font(Lora, 400 600 700, normal italic);
+}
 
 h4 {
 	color: red !important;
