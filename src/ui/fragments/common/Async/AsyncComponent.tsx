@@ -9,7 +9,7 @@ import {
 
 export interface IAsyncFunctionAndArgsType<ParametersType = any> {
 	promiseFunction: PromiseFn<ParametersType>;
-	args: Record<string, ParametersType>;
+	args?: Record<string, ParametersType>;
 }
 
 export interface IAsyncViewsPropType<DataType = any, PendingType = any, ErrorType = any> {

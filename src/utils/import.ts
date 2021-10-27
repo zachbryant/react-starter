@@ -6,7 +6,7 @@ export function importByWebpackLoadStrategy(path: string, strategy?: WebpackLoad
 	switch (strategy) {
 		case WebpackLoadStrategy.Fetch:
 			return lazy(() => import(/* webpackPrefetch: true */ path));
-		case WebpackLoadStrategy.Fetch:
+		case WebpackLoadStrategy.Load:
 			return lazy(() => import(/* webpackPreload: true */ path));
 		case WebpackLoadStrategy.None:
 		default:

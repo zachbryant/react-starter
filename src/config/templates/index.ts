@@ -1,2 +1,2 @@
 export * from './TemplateName';
-export * as Lazy from './TemplateName.lazy';
+export * from './TemplateName.async';
