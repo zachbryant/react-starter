@@ -8,7 +8,7 @@
       "customTemplates": {
         "index": "src/config/templates/index.ts",
         "component": "src/config/templates/TemplateName.tsx",
-        "lazy": "src/config/templates/TemplateName.lazy.tsx",
+        "lazy": "src/config/templates/TemplateName.async.tsx",
         "test": "src/config/templates/TemplateName.test.tsx",
         "story": "src/config/templates/components/TemplateName.stories.tsx",
         "style": "src/config/templates/TemplateName.module.scss"
@@ -24,7 +24,7 @@
       "customTemplates": {
         "index": "src/config/templates/index.ts",
         "component": "src/config/templates/TemplateName.tsx",
-        "lazy": "src/config/templates/TemplateName.lazy.tsx",
+        "lazy": "src/config/templates/TemplateName.async.tsx",
         "test": "src/config/templates/TemplateName.test.tsx",
         "story": "src/config/templates/pages/TemplateName.stories.tsx",
         "style": "src/config/templates/TemplateName.module.scss"
@@ -40,7 +40,7 @@
       "customTemplates": {
         "index": "src/config/templates/index.ts",
         "component": "src/config/templates/TemplateName.tsx",
-        "lazy": "src/config/templates/TemplateName.lazy.tsx",
+        "lazy": "src/config/templates/TemplateName.async.tsx",
         "test": "src/config/templates/TemplateName.test.tsx",
         "story": "src/config/templates/layout/TemplateName.stories.tsx",
         "style": "src/config/templates/TemplateName.module.scss"
