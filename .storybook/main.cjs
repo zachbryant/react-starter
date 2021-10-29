@@ -1,3 +1,5 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 const customWebpackConfig = require('../webpack.config.cjs')({});
 
 module.exports = {
@@ -23,13 +25,30 @@ module.exports = {
 		},
 	],
 	webpackFinal: (config) => {
-		return {
-			...config,
-			resolve: {
-				...config.resolve,
-				plugins: [...customWebpackConfig.resolve.plugins],
-			},
-		};
+		config.plugins.push(new MiniCssExtractPlugin());
+		config.resolve.plugins = customWebpackConfig.resolve.plugins;
+		config.module.rules.push({
+			test: /\.(s(a|c)|c)ss$/,
+			exclude: [/\.module\.(s(a|c)|c)ss$/],
+			use: [
+				MiniCssExtractPlugin.loader,
+				{
+					loader: 'css-loader',
+					options: {
+						sourceMap: false,
+						importLoaders: 1,
+					},
+				},
+				{
+					loader: 'sass-loader',
+					options: {
+						sourceMap: false,
+					},
+				},
+				'postcss-loader',
+			],
+		});
+		return config;
 	},
 	typescript: {
 		reactDocgen: 'react-docgen-typescript',
