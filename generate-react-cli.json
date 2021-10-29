@@ -42,7 +42,7 @@
         "component": "src/config/templates/TemplateName.tsx",
         "lazy": "src/config/templates/TemplateName.async.tsx",
         "test": "src/config/templates/TemplateName.test.tsx",
-        "story": "src/config/templates/layout/TemplateName.stories.tsx",
+        "story": "src/config/templates/layouts/TemplateName.stories.tsx",
         "style": "src/config/templates/TemplateName.module.scss"
       },
       "path": "src/ui/layouts/",
