@@ -14,7 +14,7 @@ module.exports = {
 		exactOptionalPropertyTypes: true,
 		noImplicitReturns: true,
 		strict: true,
-		structNullChecks: true,
+		strictNullChecks: true,
 		forceConsistentCasingInFileNames: true,
 		target: 'es6',
 		module: 'esnext',
